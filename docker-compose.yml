@@ -1,0 +1,43 @@
+services:
+
+  eureka-server:
+    build: ./eureka-server
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - micro-net
+
+  gateway-service:
+    build: ./gateway-service
+    container_name: gateway-service
+    ports:
+      - "8090:8090"
+    depends_on:
+      - eureka-server
+    networks:
+      - micro-net
+
+  payment-service-paypal:
+    build: ./payment-service-paypal
+    container_name: payment-service-paypal
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+    networks:
+      - micro-net
+
+  payment-service-stripe:
+    build: ./payment-service-stripe
+    container_name: payment-service-stripe
+    ports:
+      - "8083:8083"
+    depends_on:
+      - eureka-server
+    networks:
+      - micro-net
+
+networks:
+  micro-net:
+    driver: bridge
