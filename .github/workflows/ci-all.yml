@@ -1,0 +1,48 @@
+name: CI - Build & Push All Microservices
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build All Services
+        run: mvn clean install -DskipTests
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Docker Login
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build & Push eureka-server
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/eureka-server:latest ./eureka-server
+          docker push ${{ secrets.DOCKER_USERNAME }}/eureka-server:latest
+
+      - name: Build & Push gateway-service
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/gateway-service:latest ./gateway-service
+          docker push ${{ secrets.DOCKER_USERNAME }}/gateway-service:latest
+
+      - name: Build & Push payment-service-paypal
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/payment-service-paypal:latest ./payment-service-paypal
+          docker push ${{ secrets.DOCKER_USERNAME }}/payment-service-paypal:latest
+
+      - name: Build & Push payment-service-stripe
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/payment-service-stripe:latest ./payment-service-stripe
+          docker push ${{ secrets.DOCKER_USERNAME }}/payment-service-stripe:latest
