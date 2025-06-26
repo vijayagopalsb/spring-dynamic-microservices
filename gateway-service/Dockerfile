@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file (replace with actual jar name during build)
-COPY target/*.jar app.jar
+COPY target/gateway-service-1.0.0.jar app.jar
 
 # Expose internal port
 EXPOSE 8090
