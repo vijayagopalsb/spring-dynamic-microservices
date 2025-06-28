@@ -162,9 +162,11 @@ View real-time static analysis and code coverage:
 - [Code Quality](https://sonarcloud.io/summary/overall?id=vijayagopalsb_spring-dynamic-microservices)
 
 #### Author
-
 **Vijayagopal S**  
-[GitHub](https://github.com/vijayagopalsb)
+[GitHub](https://github.com/vijayagopalsb)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/vijayagopalsb)
+
+
 
 #### License
 
