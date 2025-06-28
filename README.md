@@ -49,7 +49,9 @@
   <img src="https://sonarcloud.io/api/project_badges/measure?project=vijayagopalsb_spring-dynamic-microservices&metric=security_rating" alt="Security"/>
 </a>
 
-
+<a href="https://sonarcloud.io/summary/overall?id=vijayagopalsb_spring-dynamic-microservices">
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=vijayagopalsb_spring-dynamic-microservices&metric=coverage" alt="Coverage Badge"/>
+</a>
 
 </p>
 
