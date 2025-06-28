@@ -29,6 +29,28 @@
   <a href="https://github.com/vijayagopalsb/spring-dynamic-microservices/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/vijayagopalsb/spring-dynamic-microservices?color=blue" />
   </a>
+  
+<a href="https://sonarcloud.io/summary/new_code?id=vijayagopalsb_spring-dynamic-microservices">
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=vijayagopalsb_spring-dynamic-microservices&metric=alert_status" alt="Quality Gate Status"/>
+</a>
+
+
+<a href="https://sonarcloud.io/summary/new_code?id=vijayagopalsb_spring-dynamic-microservices">
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=vijayagopalsb_spring-dynamic-microservices&metric=sqale_rating" alt="Maintainability"/>
+</a>
+
+
+<a href="https://sonarcloud.io/summary/new_code?id=vijayagopalsb_spring-dynamic-microservices">
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=vijayagopalsb_spring-dynamic-microservices&metric=reliability_rating" alt="Reliability"/>
+</a>
+
+
+<a href="https://sonarcloud.io/summary/new_code?id=vijayagopalsb_spring-dynamic-microservices">
+  <img src="https://sonarcloud.io/api/project_badges/measure?project=vijayagopalsb_spring-dynamic-microservices&metric=security_rating" alt="Security"/>
+</a>
+
+
+
 </p>
 
 
