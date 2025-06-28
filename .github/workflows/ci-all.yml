@@ -27,7 +27,7 @@ jobs:
           SONAR_HOST_URL_REMOTE: ${{ secrets.SONAR_HOST_URL_REMOTE }}
         run: |
           mvn sonar:sonar \
-            -Dsonar.projectKey=spring-dynamic-microservices \
+            -Dsonar.projectKey=vijayagopalsb_spring-dynamic-microservices \
             -Dsonar.organization=vijayagopalsb \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL_REMOTE }} \
             -Dsonar.login=${{ secrets.SONAR_TOKEN_REMOTE }}
