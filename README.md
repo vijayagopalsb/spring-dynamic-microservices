@@ -163,7 +163,7 @@ View real-time static analysis and code coverage:
 
 #### Author
 **Vijayagopal S**  
-[GitHub](https://github.com/vijayagopalsb)  
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/vijayagopalsb)   
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/vijayagopalsb)
 
 
