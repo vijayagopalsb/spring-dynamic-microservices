@@ -17,12 +17,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-		  
-      
-
       # - name: Build All Services
       #  run: mvn clean install -DskipTests
-		
       - name: Run Tests and Generate JaCoCo Coverage
         run: mvn clean verify
 
