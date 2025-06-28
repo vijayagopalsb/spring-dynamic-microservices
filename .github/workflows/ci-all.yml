@@ -31,7 +31,7 @@ jobs:
             -Dsonar.projectKey=vijayagopalsb_spring-dynamic-microservices \
             -Dsonar.organization=vijayagopalsb \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL_REMOTE }} \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN_REMOTE }}
+            -Dsonar.login=${{ secrets.SONAR_TOKEN_REMOTE }} \
             -Dsonar.coverage.jacoco.xmlReportPaths=**/target/site/jacoco/jacoco.xml
 
       - name: Set up Docker Buildx
