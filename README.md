@@ -56,21 +56,26 @@
 </p>
 
 # Spring Dynamic Microservices
-
-
 This is a comprehensive **Java-based microservices system** built with Spring Boot 3.x and Spring Cloud. It demonstrates dynamic service registration, routing, and payment processing using a modular architecture. The project includes CI integration with GitHub Actions and code quality checks with SonarCloud and JaCoCo.
 
-### Modules
+#### Architecture Overview
+- **eureka-server**: Acts as the service registry for all microservices.
+- **gateway-service**: A Spring Cloud Gateway-based API Gateway that routes requests dynamically to microservices.
+- **payment-service-paypal**: A microservice simulating PayPal payment logic, registered with Eureka.
+- **payment-service-stripe**: A microservice simulating Stripe payment logic, registered with Eureka.
+- **docker-compose.yml**: Boots up all services with required ports and network for full-stack integration.
 
+All services are **auto-discovered via Eureka** and routed through **Spring Cloud Gateway** without hardcoded endpoints.
+
+#### Modules
 - `common-api` – Shared domain objects, constants, and utilities.
 - `eureka-server` – Service discovery server powered by Netflix Eureka.
 - `gateway-service` – Spring Cloud Gateway for dynamic routing and API exposure.
 - `payment-service-paypal` – PayPal-specific payment microservice.
 - `payment-service-stripe` – Stripe-specific payment microservice.
 
-### DevOps, CI/CD & Quality Tools
+#### DevOps, CI/CD & Quality Tools
 ```
-
 | Tool          | Purpose                        |
 |---------------|--------------------------------|
 | GitHub Actions| CI/CD pipeline                 |
@@ -80,24 +85,29 @@ This is a comprehensive **Java-based microservices system** built with Spring Bo
 | SonarCloud    | Code quality, static analysis  |
 ```
 
-### Testing
-
+#### Testing
 - Unit testing with JUnit 5
 - Controller testing using Spring’s `MockMvc`
 - Code coverage with JaCoCo (`target/site/jacoco/index.html`)
 - Test reports pushed to SonarCloud
 
-### Run Locally with Docker Compose
+#### Run Locally with Docker Compose
 
-##### Requirements:
+##### Tech Stack
 - Java 17
-- Maven 3.x
+- Spring Boot 3.2.5
+- Spring Cloud Gateway
+- Eureka Server (Netflix OSS)
+- RESTful APIs
+- Maven
 - Docker & Docker Compose
 
-##### Steps:
+##### Running with Docker Compose
 
 ```bash
-mvn clean install
+git clone https://github.com/vijayagopalsb/spring-dynamic-microservices.git
+cd spring-dynamic-microservices
+mvn clean package -DskipTests
 docker-compose up --build
 ```
 
