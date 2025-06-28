@@ -67,6 +67,21 @@ This is a comprehensive **Java-based microservices system** built with Spring Bo
 
 All services are **auto-discovered via Eureka** and routed through **Spring Cloud Gateway** without hardcoded endpoints.
 
+#### Project Structure
+```
+spring-dynamic-microservices/
+│
+├── common-api/ # Common library for shared DTOs and configs
+├── eureka-server/ # Service registry
+├── gateway-service/ # API Gateway
+├── payment-service-paypal/ # Paypal payment microservice
+├── payment-service-stripe/ # Stripe payment microservice
+├── docker-compose.yml # Multi-container setup
+└── README.md
+```
+
+![Architecture Diagram](assets/spring-dynamic-microservices.png)
+
 #### Modules
 - `common-api` – Shared domain objects, constants, and utilities.
 - `eureka-server` – Service discovery server powered by Netflix Eureka.
