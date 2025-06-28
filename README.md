@@ -55,10 +55,93 @@
 
 </p>
 
+# Spring Dynamic Microservices
 
-#<h1 align="center">Spring Dynamic Microservices</h1>#
 
+This is a comprehensive **Java-based microservices system** built with Spring Boot 3.x and Spring Cloud. It demonstrates dynamic service registration, routing, and payment processing using a modular architecture. The project includes CI integration with GitHub Actions and code quality checks with SonarCloud and JaCoCo.
 
-**Project under construction**
+### Modules
 
-This project contains a Spring Boot based microservices architecture with Eureka service discovery and Spring Cloud Gateway for dynamic routing.
+- `common-api` – Shared domain objects, constants, and utilities.
+- `eureka-server` – Service discovery server powered by Netflix Eureka.
+- `gateway-service` – Spring Cloud Gateway for dynamic routing and API exposure.
+- `payment-service-paypal` – PayPal-specific payment microservice.
+- `payment-service-stripe` – Stripe-specific payment microservice.
+
+### DevOps, CI/CD & Quality Tools
+```
+
+| Tool          | Purpose                        |
+|---------------|--------------------------------|
+| GitHub Actions| CI/CD pipeline                 |
+| Docker        | Containerization               |
+| Docker Compose| Multi-container orchestration  |
+| JaCoCo        | Test coverage reports          |
+| SonarCloud    | Code quality, static analysis  |
+```
+
+### Testing
+
+- Unit testing with JUnit 5
+- Controller testing using Spring’s `MockMvc`
+- Code coverage with JaCoCo (`target/site/jacoco/index.html`)
+- Test reports pushed to SonarCloud
+
+### Run Locally with Docker Compose
+
+##### Requirements:
+- Java 17
+- Maven 3.x
+- Docker & Docker Compose
+
+##### Steps:
+
+```bash
+mvn clean install
+docker-compose up --build
+```
+
+#### Service Access URLs
+
+Here are the main endpoints for accessing services in this dynamic microservices project:
+
+```
+| Purpose                          | URL                                                              |
+|----------------------------------|------------------------------------------------------------------|
+| Eureka Dashboard                 | [http://localhost:8761](http://localhost:8761)                   |
+| PayPal Service (Direct Access)   | [http://localhost:8082/hello](http://localhost:8082/hello)       |
+| PayPal via Gateway               | [http://localhost:8090/payment-service-paypal/hello]             |
+|                                  |             (http://localhost:8090/payment-service-paypal/hello) |
+| Stripe Service (Direct Access)   | [http://localhost:8083/hello](http://localhost:8083/hello)       |
+| Stripe via Gateway               | [http://localhost:8090/payment-service-stripe/hello]             |
+|                                  |             (http://localhost:8090/payment-service-stripe/hello) |
+| Gateway Test Route               | [http://localhost:8090/test/get](http://localhost:8090/test/get) |
+```
+
+#### CI Workflow
+
+CI is triggered on push to `main`:
+- Builds all modules
+- Runs tests
+- Sends coverage to SonarCloud
+- Builds Docker images
+- Pushes to DockerHub (if configured)
+
+CI file: `.github/workflows/ci-all.yml`
+
+#### SonarCloud Dashboard
+
+View real-time static analysis and code coverage:
+
+- [Coverage Report](https://sonarcloud.io/summary/overall?id=vijayagopalsb_spring-dynamic-microservices)
+- [Code Quality](https://sonarcloud.io/summary/overall?id=vijayagopalsb_spring-dynamic-microservices)
+
+#### Author
+
+**Vijayagopal S**  
+[GitHub](https://github.com/vijayagopalsb)
+
+#### License
+
+This project is licensed under the [MIT License](LICENSE).
+
