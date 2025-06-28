@@ -2,7 +2,7 @@ name: CI - Build & Push All Microservices
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-push:
