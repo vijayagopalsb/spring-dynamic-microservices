@@ -80,7 +80,7 @@ spring-dynamic-microservices/
 └── README.md
 ```
 
-![Architecture Diagram](assets/spring-dynamic-microservices.png)
+![Architecture Diagram](assests/spring-dynamic-microservices.png)
 
 #### Modules
 - `common-api` – Shared domain objects, constants, and utilities.
