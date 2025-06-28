@@ -22,13 +22,13 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: SonarQube Analysis
-	    env:
-		  SONAR_TOKEN_REMOTE: ${{ secrets.SONAR_TOKEN_REMOTE }}
-	      SONAR_HOST_URL_REMOTE: ${{ secrets.SONAR_HOST_URL_REMOTE }}
+        env:
+          SONAR_TOKEN_REMOTE: ${{ secrets.SONAR_TOKEN_REMOTE }}
+          SONAR_HOST_URL_REMOTE: ${{ secrets.SONAR_HOST_URL_REMOTE }}
         run: |
           mvn sonar:sonar \
             -Dsonar.projectKey=spring-dynamic-microservices \
-			-Dsonar.organization=vijayagopalsb \
+            -Dsonar.organization=vijayagopalsb \
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL_REMOTE }} \
             -Dsonar.login=${{ secrets.SONAR_TOKEN_REMOTE }}
 
